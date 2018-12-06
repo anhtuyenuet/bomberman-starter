@@ -4,6 +4,7 @@ import uet.oop.bomberman.Game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * Swing Frame chứa toàn bộ các component
@@ -16,7 +17,7 @@ public class Frame extends JFrame {
 	
 	private Game _game;
 
-	public Frame() {
+	public Frame() throws IOException {
 		
 		_containerpane = new JPanel(new BorderLayout());
 		_gamepane = new GamePanel(this);
@@ -46,4 +47,7 @@ public class Frame extends JFrame {
 		_infopanel.setPoints(points);
 	}
 	
+        public void setHigh(int high) {
+            _infopanel.setHigh(high);
+        }
 }

@@ -15,6 +15,4 @@ public class Coordinates {
 	public static int tileToPixel(double i) {
 		return (int)(i * Game.TILES_SIZE);
 	}
-	
-	
 }
