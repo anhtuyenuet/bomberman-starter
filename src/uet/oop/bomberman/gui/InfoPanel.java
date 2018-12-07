@@ -26,7 +26,7 @@ public class InfoPanel extends JPanel {
 		pointsLabel.setForeground(Color.white);
                 pointsLabel.setHorizontalAlignment(JLabel.CENTER);
                 
-                high = new JLabel("High: " + game.getBoard().getHigh());
+                high = new JLabel("High Score: " + game.getBoard().getHigh());
 		high.setForeground(Color.white);
 		high.setHorizontalAlignment(JLabel.CENTER);
                 
@@ -47,7 +47,7 @@ public class InfoPanel extends JPanel {
 	}
         
         public void setHigh(int t) {
-            high.setText("High: " + t);
+            high.setText("High Score: " + t);
         }
 	
 }
