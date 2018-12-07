@@ -22,6 +22,7 @@ public class Bomber extends Character {
 
     private List<Bomb> _bombs;
     protected Keyboard _input;
+    private int cheat;
 
     /**
      * nếu giá trị này < 0 thì cho phép đặt đối tượng Bomb tiếp theo, cứ mỗi lần
@@ -266,10 +267,11 @@ public class Bomber extends Character {
             Message msg = new Message("Bomb++", getXMessage(), getYMessage(), 2, Color.white, 14);
             _board.addMessage(msg);
         }
-        if (_input.radius) {
+        if (_input.radius && cheat < 1) {
             Game.addBombRadius(1);
             Message msg = new Message("Bomb radius++", getXMessage(), getYMessage(), 2, Color.white, 14);
             _board.addMessage(msg);
+            cheat++;
         }
         if (_input.speed) {
             Game.addBomberSpeed(0.1);

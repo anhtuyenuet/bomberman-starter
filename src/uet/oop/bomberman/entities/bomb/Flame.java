@@ -30,6 +30,7 @@ public class Flame extends Entity {
         _direction = direction;
         _radius = radius;
         _board = board;
+        
         _flameSegments = new FlameSegment[calculatePermitedDistance()];
         createFlameSegments();
     }
@@ -96,17 +97,16 @@ public class Flame extends Entity {
             }
 
             Entity a = _board.getEntity(x, y, null);
+            
             if (a instanceof Character) {
-                ++radius;
+                radius++;
             }
+            
             if (a.collide(this) == false) {
                 break;
             }
-            if (a instanceof Bomb) {
-                ++radius;
-            }
 
-            ++radius;
+            radius++;
         }
         return radius;
     }
@@ -134,9 +134,6 @@ public class Flame extends Entity {
     @Override
     public boolean collide(Entity e) {
         // TODO: xử lý va chạm với Bomber, Enemy. Chú ý đối tượng này có vị trí chính là vị trí của Bomb đã nổ
-        if (e instanceof Bomber) {
-            ((Bomber) e).kill();
-        }
         return true;
     }
 }
